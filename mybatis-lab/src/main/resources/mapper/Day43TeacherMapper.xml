@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="learning.persistence.Day43TeacherMapper">
+    <select id="search" resultMap="learning.persistence.Day41TeacherMapper.teacherMap">
+        SELECT id, teacher_name, subject FROM teacher
+        <where>
+            <if test="name != null and name != ''">AND teacher_name = #{name}</if>
+            <if test="subject != null and subject != ''">AND subject = #{subject}</if>
+            <if test="minId != null">AND id &gt;= #{minId}</if>
+        </where>
+        ORDER BY
+        <!-- 固定 SQL 片段：外部排序键映射成数据库列，不拼接用户文本。 -->
+        <choose>
+            <when test='sort == "name"'>teacher_name</when>
+            <when test='sort == "subject"'>subject</when>
+            <otherwise>id</otherwise>
+        </choose>
+        <choose>
+            <when test='direction == "desc"'>DESC</when>
+            <otherwise>ASC</otherwise>
+        </choose>
+        <if test='sort == "name" or sort == "subject"'>, id ASC</if>
+    </select>
+</mapper>

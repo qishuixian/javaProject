@@ -27,6 +27,17 @@ public class MybatisLabApplication {
             }
             plus.deleteById(row.getId());
             System.out.println("Day42 删除后为空：" + (plus.selectById(row.getId()) == null));
+            TeacherSearchService search = context.getBean(TeacherSearchService.class);
+            System.out.println("Day43 无条件数量：" + search.search(null, null, null, null, null).size());
+            for (TeacherRow teacher : search.search(null, "Java", 2L, "id", "desc")) {
+                System.out.println("Day43 Java且编号>=2：" + teacher.getId() + " / " + teacher.getName());
+            }
+            try {
+                search.search(null, null, null, "id; DROP TABLE teacher", "asc");
+                throw new IllegalStateException("非法排序没有被拒绝");
+            } catch (IllegalArgumentException expected) {
+                System.out.println("Day43 非法排序已拒绝：" + expected.getMessage());
+            }
         }
     }
 }
