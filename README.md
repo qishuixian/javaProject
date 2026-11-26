@@ -163,7 +163,7 @@ E:/my/javaProjects/
 | [Day34](docs/DAY34_MVC_BINDING.md) | MVC 参数绑定 | 实现 GET/POST；验证路径参数、查询参数、JSON body |
 | [Day35](docs/DAY35_DTO_ENTITY.md) | DTO/Entity 分层 | 不直接返回数据库实体；控制输出字段并完成对象转换 |
 | [Day36](docs/DAY36_VALIDATION.md) | 参数校验 | 用 Bean Validation 校验名称、页大小；非法请求返回清晰错误 |
-| Day37 | 统一异常处理 | 分别返回校验错误、业务错误、未知异常；未知异常保留服务端堆栈 |
+| [Day37](docs/DAY37_EXCEPTION_HANDLING.md) | 统一异常处理 | 分别返回校验错误、业务错误、未知异常；未知异常保留服务端堆栈 |
 | Day38 | AOP 与代理 | 写一个耗时切面；通过同类调用与跨 Bean 调用对照代理边界 |
 | Day39 | Web 测试 | 用 MockMvc 验证状态码、JSON、非法输入；了解 Mock 不代表真实数据库正确 |
 | Day40 | HTTP 综合练习 | 教师新增、查询、更新形成闭环；用 curl 或接口工具保存复现请求 |
