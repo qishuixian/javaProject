@@ -43,7 +43,7 @@ ORDER BY subject ASC, id ASC
 LIMIT ? OFFSET ?;
 ```
 
-第一条统计筛选后的所有记录，第二条只取当前页。COUNT 查询不加 LIMIT/OFFSET；列表也不是先查全部再在 Java 中截取。
+第一条统计筛选后的所有记录，第二条只取当前页。若 offset 已经达到或超过 total，直接返回空列表，不再执行第二条 SQL。COUNT 查询不加 LIMIT/OFFSET；列表也不是先查全部再在 Java 中截取。
 
 `COUNT(*)` 在没有匹配记录时返回数字 0，不是 null。Mapper 用 long 接收总数，列表返回 List<TeacherRow>。
 
@@ -133,5 +133,11 @@ total / pageSize + (total % pageSize == 0 ? 0 : 1)
 - [ ] 能解释超出末页为什么 total 仍然大于 0。
 - [ ] 能说明唯一排序键解决什么，以及不能解决什么。
 - [ ] 能指出 LIMIT/OFFSET 在数据库执行，而不是 Java 截取全部结果。
+
+## 11. 本次验证记录
+
+2026-11-26：使用 JDK 8 和临时 Maven 3.9.9 执行 package，21 个 H2 集成测试全部通过，失败、错误、跳过均为 0，BUILD SUCCESS。实际运行 JAR，确认数量 1/2/3、总页数 2、超出末页仍保留 total=2，程序正常退出。
+
+首次边界测试发现当前 H2 对超大 OFFSET 的限制；已在 Service 统计后对超出末页直接返回空列表，再重跑测试与程序通过。未操作 IDEA，未验证 MySQL、并发快照或深分页性能。
 
 下一课 Day45：Spring 事务，故意抛异常验证回滚，并观察代理与异常捕获的影响。

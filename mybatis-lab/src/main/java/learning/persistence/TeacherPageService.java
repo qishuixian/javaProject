@@ -15,6 +15,9 @@ public class TeacherPageService {
         // 先转 long 再乘，避免 int 溢出。页码从1开始，偏移量从0开始。
         long offset = ((long) page - 1) * pageSize;
         long total = mapper.count(filter);
+        if (offset >= total) {
+            return new TeacherPage(page, pageSize, total, java.util.Collections.emptyList());
+        }
         return new TeacherPage(page, pageSize, total, mapper.page(filter, pageSize, offset));
     }
 }
