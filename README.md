@@ -158,8 +158,8 @@ E:/my/javaProjects/
 | 天数 | 核心主题 | 当天练习与验收 |
 |---|---|---|
 | Day31 | HTTP 与接口契约 | 设计教师查询请求/响应；区分状态码、业务码、分页字段 |
-| Day32 | IoC 与依赖注入 | 把 Repository/Service 注册为 Bean，用构造器注入；解释为何可替换实现 |
-| Day33 | Boot 启动和配置 | 启动内存版服务；切换 local/test 配置并验证优先级 |
+| [Day32](docs/DAY32_IOC_AND_DI.md) | IoC 与依赖注入 | 把 Repository/Service 注册为 Bean，用构造器注入；解释为何可替换实现 |
+| [Day33](docs/DAY33_BOOT_AND_CONFIG.md) | Boot 启动和配置 | 启动内存版服务；切换 local/test 配置并验证优先级 |
 | Day34 | MVC 参数绑定 | 实现 GET/POST；验证路径参数、查询参数、JSON body |
 | Day35 | DTO/Entity 分层 | 不直接返回数据库实体；控制输出字段并完成对象转换 |
 | Day36 | 参数校验 | 用 Bean Validation 校验名称、页大小；非法请求返回清晰错误 |
