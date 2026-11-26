@@ -28,6 +28,13 @@ public class MybatisLabApplication {
             plus.deleteById(row.getId());
             System.out.println("Day42 删除后为空：" + (plus.selectById(row.getId()) == null));
             TeacherSearchService search = context.getBean(TeacherSearchService.class);
+            TeacherPageService pages = context.getBean(TeacherPageService.class);
+            TeacherPage first = pages.query("Java", 1, 1);
+            TeacherPage beyond = pages.query("Java", 3, 1);
+            System.out.println("Day44 当前页条数/筛选总数/表内总数：" + first.getCurrentCount()
+                    + "/" + first.getTotal() + "/" + context.getBean(Day44TeacherMapper.class).countAll());
+            System.out.println("Day44 总页数：" + first.getTotalPages());
+            System.out.println("Day44 超出末页：条数=" + beyond.getCurrentCount() + "，总数=" + beyond.getTotal());
             System.out.println("Day43 无条件数量：" + search.search(null, null, null, null, null).size());
             for (TeacherRow teacher : search.search(null, "Java", 2L, "id", "desc")) {
                 System.out.println("Day43 Java且编号>=2：" + teacher.getId() + " / " + teacher.getName());
