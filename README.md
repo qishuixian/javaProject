@@ -165,8 +165,8 @@ E:/my/javaProjects/
 | [Day36](docs/DAY36_VALIDATION.md) | 参数校验 | 用 Bean Validation 校验名称、页大小；非法请求返回清晰错误 |
 | [Day37](docs/DAY37_EXCEPTION_HANDLING.md) | 统一异常处理 | 分别返回校验错误、业务错误、未知异常；未知异常保留服务端堆栈 |
 | [Day38](docs/DAY38_AOP_PROXY.md) | AOP 与代理 | 写一个耗时切面；通过同类调用与跨 Bean 调用对照代理边界 |
-| Day39 | Web 测试 | 用 MockMvc 验证状态码、JSON、非法输入；了解 Mock 不代表真实数据库正确 |
-| Day40 | HTTP 综合练习 | 教师新增、查询、更新形成闭环；用 curl 或接口工具保存复现请求 |
+| [Day39](docs/DAY39_WEB_TEST.md) | Web 测试 | 用 MockMvc 验证状态码、JSON、非法输入；了解 Mock 不代表真实数据库正确 |
+| [Day40](docs/DAY40_HTTP_LAB.md) | HTTP 综合练习 | 教师新增、查询、更新形成闭环；用 curl 或接口工具保存复现请求 |
 
 阶段验收：画出请求经过 Controller → Service → Repository 的顺序；能解释注解由谁处理，而非仅记住注解名字。
 

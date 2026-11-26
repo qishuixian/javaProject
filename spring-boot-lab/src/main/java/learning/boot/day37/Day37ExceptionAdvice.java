@@ -15,8 +15,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.context.request.WebRequest;
 
-// 只统一 Day37 的错误；历史课程的响应格式不受影响。
-@RestControllerAdvice(assignableTypes = Day37ExceptionController.class)
+// Day40 综合练习复用 Day37 的错误协议；其他历史课程保持原样。
+@RestControllerAdvice(assignableTypes = {Day37ExceptionController.class,
+        learning.boot.day40.Day40TeacherController.class})
 public class Day37ExceptionAdvice extends ResponseEntityExceptionHandler {
     private static final Logger LOG = LoggerFactory.getLogger(Day37ExceptionAdvice.class);
 

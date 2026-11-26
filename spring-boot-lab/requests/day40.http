@@ -1,0 +1,30 @@
+@base = http://127.0.0.1:8081/api/day40/teachers
+# 将此值替换为新增响应中的真实 id。
+@teacherId = 10001
+
+### 新增：201，记录 id 和 Location
+POST {{base}}
+Content-Type: application/json
+
+{"name":"张老师","subject":"Java"}
+
+### 查询：200
+GET {{base}}/{{teacherId}}
+
+### 更新：200
+PUT {{base}}/{{teacherId}}
+Content-Type: application/json
+
+{"name":"李老师","subject":"数学"}
+
+### 再次查询：确认姓名、科目已改变
+GET {{base}}/{{teacherId}}
+
+### 非法更新：400，之后重新查询确认数据未变
+PUT {{base}}/{{teacherId}}
+Content-Type: application/json
+
+{}
+
+### 不存在：404
+GET {{base}}/-1
