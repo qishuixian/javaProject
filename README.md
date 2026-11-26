@@ -176,8 +176,8 @@ E:/my/javaProjects/
 
 | 天数 | 核心主题 | 当天练习与验收 |
 |---|---|---|
-| Day41 | MyBatis 映射 | JDBC 查询替换为 Mapper/XML；验证列名、属性名及返回类型 |
-| Day42 | MyBatis-Plus | 对照 BaseMapper 与自定义 SQL；明确复杂查询不强行套通用 CRUD |
+| [Day41](docs/DAY41_MYBATIS.md) | MyBatis 映射 | JDBC 查询替换为 Mapper/XML；验证列名、属性名及返回类型 |
+| [Day42](docs/DAY42_MYBATIS_PLUS.md) | MyBatis-Plus | 对照 BaseMapper 与自定义 SQL；明确复杂查询不强行套通用 CRUD |
 | Day43 | 动态 SQL | 添加多个可选筛选；值使用参数绑定，排序字段按白名单映射 |
 | Day44 | 分页与总数 | 分清当前页条数、筛选后总数、库内总数；固定排序含唯一兜底键 |
 | Day45 | Spring 事务 | 故意抛异常验证回滚；测试同类调用、异常被捕获等失效场景 |

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="learning.persistence.Day42TeacherMapper">
+    <resultMap id="countMap" type="learning.persistence.SubjectCount">
+        <result column="subject" property="subject"/>
+        <result column="teacher_count" property="teacherCount"/>
+    </resultMap>
+    <select id="countBySubject" resultMap="countMap">
+        SELECT subject, COUNT(*) AS teacher_count FROM teacher GROUP BY subject ORDER BY subject
+    </select>
+</mapper>

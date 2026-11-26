@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="learning.persistence.Day41TeacherMapper">
+    <resultMap id="teacherMap" type="learning.persistence.TeacherRow">
+        <id column="id" property="id"/>
+        <result column="teacher_name" property="name"/>
+        <result column="subject" property="subject"/>
+    </resultMap>
+    <select id="findById" resultMap="teacherMap">
+        SELECT id, teacher_name, subject FROM teacher WHERE id = #{id}
+    </select>
+    <select id="findBySubject" resultMap="teacherMap">
+        SELECT id, teacher_name, subject FROM teacher WHERE subject = #{subject} ORDER BY id
+    </select>
+</mapper>
