@@ -3,3 +3,7 @@ CREATE TABLE teacher (
     teacher_name VARCHAR(40) NOT NULL,
     subject VARCHAR(40) NOT NULL
 );
+CREATE TABLE lesson48 (
+    id BIGINT PRIMARY KEY,
+    teacher_id BIGINT NOT NULL
+);

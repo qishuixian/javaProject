@@ -183,7 +183,7 @@ E:/my/javaProjects/
 | [Day45](docs/DAY45_TRANSACTIONS.md) | Spring 事务 | 故意抛异常验证回滚；测试同类调用、异常被捕获等失效场景 |
 | [Day46](docs/DAY46_ISOLATION_MVCC.md) | 隔离级别与 MVCC | 两个数据库连接复现读现象；说明一致性读与锁定读区别 |
 | [Day47](docs/DAY47_INDEX_EXPLAIN.md) | 索引与 EXPLAIN | 对筛选排序建立候选索引，记录扫描行数与执行计划变化 |
-| Day48 | 批量与 N+1 | 将逐条补充教师信息改为批量查询；结果相同且 SQL 次数下降 |
+| [Day48](docs/DAY48_BATCH_N_PLUS_ONE.md) | 批量与 N+1 | 将逐条补充教师信息改为批量查询；结果相同且 SQL 次数下降 |
 | Day49 | 多数据源与连接池 | 两个本地库演示 @DS；验证代理、事务边界及不存在的数据源 |
 | Day50 | 数据访问验收 | 为组合筛选、分页、回滚建立数据库集成测试，保留执行记录 |
 
